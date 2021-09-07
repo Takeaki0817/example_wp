@@ -1,0 +1,412 @@
+@use '../../setting' as s;
+@use '../../mixin' as m;
+
+.ly_header {
+	position: fixed;
+	@include m.zIndex(header);
+	top: 0;
+	left: 0;
+
+	@include s.mq(xl) {
+		display: block;
+		position: relative;
+	}
+
+	&_row {
+		height: 72px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&_logo {
+		max-width: calc(100% - 120px);
+		width: 64%;
+		margin-left: 4%;
+		position: relative;
+		@include m.zIndex(modal);
+
+		@include s.mq(xl) {
+			width: 356px;
+			margin-left: 32px;
+		}
+	}
+
+	&_logo-link {
+		display: block;
+	}
+
+	&_logo_img {
+		object-fit: contain;
+		object-position: center;
+	}
+}
+
+.ly_header-contact {
+	display: none;
+	margin-right: 16px;
+	margin-left: 64px;
+
+	@include s.mq(xl) {
+		display: flex;
+	}
+
+	&_wrapper {
+		display: flex;
+		flex-direction: column-reverse;
+
+		@include s.mq(xl) {
+			flex-direction: row;
+		}
+	}
+
+	&_item {
+		height: 64px;
+
+		&:not(:first-child) {
+			@include s.mq(xl) {
+				margin-left: 8px;
+			}
+		}
+	}
+
+	&_link {
+		display: block;
+		height: 100%;
+	}
+
+	&_img {
+		object-fit: contain;
+		height: 100%;
+		width: auto;
+	}
+}
+
+.ly_header-contact-menu {
+	width: 92%;
+	margin: 0 auto;
+
+	&_wrapper {
+		padding-bottom: 16px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		@include s.mq(sm) {
+			padding-bottom: 24px;
+		}
+
+		@include s.mq(xl) {
+			display: none;
+		}
+	}
+
+	&_item {
+		height: 56px;
+		display: none;
+
+		@media screen and (min-width: 340px) {
+			display: block;
+		}
+
+		@include s.mq(sm) {
+			height: 64px;
+		}
+
+		@include s.mq() {
+			height: 80px;
+		}
+
+		&:not(:first-child) {
+			margin-top: 10px;
+		}
+	}
+
+	&_link {
+		display: block;
+		height: 100%;
+	}
+
+	&_img {
+		object-fit: contain;
+		height: 100%;
+		width: auto;
+	}
+}
+
+.ly_header-sns {
+	display: none;
+	align-items: center;
+
+	@include s.mq(xl) {
+		display: flex;
+	}
+
+	&_item {
+		position: relative;
+
+		&:not(:first-child) {
+			margin-left: 24px;
+		}
+
+		&::before {
+			content: '';
+			width: 15px;
+			height: 15px;
+			position: absolute;
+			top: 50%;
+			left: 12px;
+			transform: translate(-50%, -50%);
+		}
+
+		&__facebook::before {
+			background: url(s.$imgDir + 'logo-facebook.png') center / contain;
+		}
+
+		&__instagram::before {
+			background: url(s.$imgDir + 'logo-instagram.png') center / contain;
+		}
+	}
+
+	&_link {
+		font-size: 15px;
+		letter-spacing: 0.1em;
+		display: block;
+		padding-left: 24px;
+	}
+}
+
+.ly_header-sns-menu {
+	display: flex;
+	align-items: center;
+	width: 92%;
+	margin: 8px auto 0;
+
+	@include s.mq(sm) {
+		margin-top: 32px;
+	}
+
+	&_item {
+		letter-spacing: 0.1em;
+		position: relative;
+
+		&:not(:first-child) {
+			margin-left: 24px;
+		}
+
+		&::before {
+			content: '';
+			width: 15px;
+			height: 15px;
+			position: absolute;
+			top: 50%;
+			left: 12px;
+			transform: translate(-50%, -50%);
+		}
+
+		&__facebook::before {
+			background: url(s.$imgDir + 'logo-facebook.png') center / contain;
+		}
+
+		&__instagram::before {
+			background: url(s.$imgDir + 'logo-instagram.png') center / contain;
+		}
+	}
+
+	&_link {
+		font-size: 15px;
+		display: block;
+		padding-left: 24px;
+	}
+}
+
+.ly_header-nav {
+	width: 100%;
+	background: s.$baseColor02;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	@include m.zIndex(menu);
+	display: none;
+
+	@include s.mq(xl) {
+		position: static;
+		display: block;
+		background: none;
+	}
+
+	&_items {
+		width: 92%;
+		margin: 80px auto 0;
+		@include s.mq(sm) {
+			margin-top: 160px;
+		}
+
+		@include s.mq(xl) {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			margin-top: 0;
+		}
+	}
+
+	&_item {
+		@include s.mq(xl) {
+			width: 100%;
+			min-height: 60px;
+			background: s.$baseColor02;
+		}
+
+		&:not(:first-child) {
+			margin-top: 8px;
+
+			@include s.mq(sm) {
+				margin-top: 30px;
+			}
+
+			@include s.mq(xl) {
+				margin-top: 0;
+				border-left: 1px solid s.$baseColor;
+			}
+		}
+	}
+
+	&_link {
+		color: inherit;
+		font-size: 14px;
+		font-weight: bold;
+		line-height: 1.2;
+		display: inline-flex;
+		height: 100%;
+		padding: 8px 0;
+		flex-direction: column;
+
+		@include s.mq(xl) {
+			display: flex;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	&_link-sub {
+		font-size: 12px;
+		font-weight: normal;
+	}
+
+	&_parent {
+		display: flex;
+
+		@include s.mq(xl) {
+			display: block;
+			position: relative;
+		}
+	}
+
+	&_children {
+		padding-left: 56px;
+		position: relative;
+
+		@include s.mq(sm) {
+			padding-left: 80px;
+		}
+
+		@include s.mq(xl) {
+			padding: 0;
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+		}
+
+		&::before {
+			content: '＋';
+			color: s.$accentColor02;
+			font-size: 20px;
+			font-weight: bold;
+			position: absolute;
+			top: 8px;
+			left: calc(56px / 2);
+			transform: translateX(-50%);
+
+			@include s.mq(sm) {
+				left: calc(80px / 2);
+			}
+
+			@include s.mq(xl) {
+				content: none;
+			}
+		}
+	}
+
+	&_parent:hover > &_children {
+		@include s.mq(xl) {
+			display: block;
+		}
+	}
+
+	&_child {
+		width: 100%;
+
+		@include s.mq(xl) {
+			color: s.$baseColor;
+			height: 60px;
+			background: rgba($color: s.$accentColor02, $alpha: 0.88);
+		}
+
+		&:not(:first-child) {
+			@include s.mq(xl) {
+				border-top: 1px solid #fff;
+			}
+		}
+	}
+}
+
+.ly_header-hamburger {
+	width: 100px;
+	height: 80px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	display: block;
+	background: s.$accentColor;
+	border-radius: 0 0 0 80%;
+	cursor: pointer;
+	@include m.zIndex(modal);
+
+	@include s.mq(xl) {
+		display: none;
+	}
+
+	&_bar {
+		width: 24px;
+		height: 2px;
+		background: s.$baseColor;
+		position: absolute;
+		left: 60%;
+		transform: translateX(-50%);
+
+		&:nth-of-type(1) {
+			top: 18px;
+		}
+		&:nth-of-type(2) {
+			top: 24px;
+		}
+		&:nth-of-type(3) {
+			top: 30px;
+		}
+	}
+
+	&_txt {
+		font-size: 12px;
+		color: s.$baseColor;
+		position: absolute;
+		top: 36px;
+		left: 60%;
+		transform: translateX(-50%);
+	}
+}

@@ -1,0 +1,8 @@
+// ContactForm7の余計なスタイルを外すための記述
+div.wpcf7 .ajax-loader {
+	display: none !important;
+}
+
+.wpcf7-mail-sent-ok {
+	display: none !important;
+}

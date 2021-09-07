@@ -1,0 +1,26 @@
+@use '../setting' as s;
+%container {
+	width: 92%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.ly_container-s {
+	@extend %container;
+	max-width: s.$contentWidthS;
+}
+
+.ly_container {
+	@extend %container;
+	max-width: s.$contentWidth;
+}
+
+.ly_container-l {
+	@extend %container;
+	max-width: s.$contentWidthL;
+}
+
+.ly_container-xl {
+	@extend %container;
+	max-width: 1400px;
+}
