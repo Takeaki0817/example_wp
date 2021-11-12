@@ -1,7 +1,7 @@
 /* constiables */
 const { src, dest, watch, series, parallel } = require('gulp');
 //related scss
-const sass = require('gulp-sass');
+const sass = require('gulp-dart-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');

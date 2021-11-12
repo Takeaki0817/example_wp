@@ -1,13 +1,13 @@
 <?php
 
-    /* 管理バーの非表示 (margin-topがなくなる) */
-    add_filter('show_admin_bar', '__return_false');
+/* 管理バーの非表示 (margin-topがなくなる) */
+add_filter('show_admin_bar', '__return_false');
 
-    /* アイキャッチ画像の有効化 */
-    add_theme_support('post-thumbnails');
+/* アイキャッチ画像の有効化 */
+add_theme_support('post-thumbnails');
 
-    /* アイキャッチ画像 サイズ指定させない */
-    add_filter('wp_calculate_image_srcset_meta', '__return_null');
+/* アイキャッチ画像 サイズ指定させない */
+add_filter('wp_calculate_image_srcset_meta', '__return_null');
 
 /* スタイルの読み込み(呼び出し) */
 add_action('init', 'load_script');
