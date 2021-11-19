@@ -1,9 +1,0 @@
-@use '../setting' as s;
-.ly_section {
-	padding: 40px 0;
-	overflow: hidden;
-
-	@include s.mq() {
-		padding: 72px 0;
-	}
-}

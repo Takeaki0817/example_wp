@@ -2,12 +2,6 @@
 
 * {
 	font-family: s.$baseFontFamily;
-	font-size: 13px;
-	font-weight: 500;
-
-	@include s.mq(sm) {
-		font-size: 15px;
-	}
 }
 
 body {
